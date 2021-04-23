@@ -17,7 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">  
+    <style>
+      body 
+      {
+        background-color:#8effc6;
+      }
+    </style>  
 </head>
 <body>
     <div id="app">

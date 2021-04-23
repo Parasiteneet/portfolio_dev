@@ -12,9 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/mypage', 'MypageController@index')->middleware('auth')->name('mypage');
+
+Route::get('/reserve', function () {
+    return view('reserve');
+})->name('reserve');
+

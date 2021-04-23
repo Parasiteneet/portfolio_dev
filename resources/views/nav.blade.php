@@ -11,10 +11,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                          <a class="nav-link">マイページ</a>
+                          <a class="nav-link" href="{{ route('mypage') }}">マイページ</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link">予約管理</a>
+                          <a class="nav-link" href="{{ route('reserve') }}">予約管理</a>
                         </li>
                         @guest
                             <li class="nav-item">
