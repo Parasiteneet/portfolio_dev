@@ -17,7 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">  
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
+     <!-- カレンダー用 -->
+    <link href="{{ asset('css/calendar.css') }}" rel="stylesheet"> 
     <style>
       body 
       {
