@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('top');
 });
 
-Route::get('/calendar', 'CalendarController@show')->name('calendar');
+Route::get('/calendar', function() {
+    return view('calendar');
+})->name('calendar');
 
 Auth::routes();
 
