@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
+
+Route::get('/calendar', function() {
+    return view('calendar');
+})->name('calendar');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/mypage', 'MypageController@index')->middleware('auth')->name('mypage');
+
+Route::get('/reserve', function () {
+    return view('reserve');
+})->middleware('auth')->name('reserve');
+
+
+
