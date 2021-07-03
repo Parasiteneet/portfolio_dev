@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('top');
 });
 
-Route::get('/calendar', function() {
-    return view('calendar');
-})->name('calendar');
+Route::get('/calendar', 'ReserveController@index')->name('calendar');
 
 Auth::routes();
 

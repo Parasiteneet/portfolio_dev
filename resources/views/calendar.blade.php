@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>ここにカレンダーくる</h1>
+  <div class="reservation-form">
+    <form>
+      
+    </form>
+  </div>
 @endsection
