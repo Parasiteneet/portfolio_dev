@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>ここにカレンダーくる</h1>
+<div>
+<input type="datetime-local" value="{{ $dt }}">
+</div>
 @endsection
