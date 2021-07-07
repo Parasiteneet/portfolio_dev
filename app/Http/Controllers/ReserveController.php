@@ -8,7 +8,7 @@ class ReserveController extends Controller
 {
     public function index() 
     {
-        return view('calendar');
+        return view('reserve');
     }
     
     public function confirm(Request $request) 

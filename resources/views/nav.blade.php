@@ -14,7 +14,7 @@
                           <a class="nav-link" href="{{ route('mypage') }}">マイページ</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('reserve') }}">予約管理</a>
+                          <a class="nav-link" href="{{ route('manage') }}">予約管理</a>
                         </li>
                         @guest
                             <li class="nav-item">

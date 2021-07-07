@@ -8,7 +8,7 @@
         <p class="lead">マイページでは、ご予約されているお日にちを確認できます。</p>
         <hr class="my-4">
         <p>ご予約中のお日にち：</p>
- <a class="btn btn-outline-success text-success btn-lg" href="{{ route('calendar') }}" role="button" >ご予約はこちら</a>
+ <a class="btn btn-outline-success text-success btn-lg" href="{{ route('reserve') }}" role="button" >ご予約はこちら</a>
     </div>
 </div>
 @endsection
