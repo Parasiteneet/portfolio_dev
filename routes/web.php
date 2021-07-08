@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('top');
 });
 
-Route::get('/reserve', 'ReserveController@index')->name('reserve');
+Route::get('/book', 'ReserveController@index')->name('reserve');
 
-// Route::get('/reserve', 'ReserveController@confirm');
+// Route::post('/book/confirm', 'ReserveController@confirm')->name('confirm');
 
-// Route::get('/reserve', 'ReserveController@send');
+// Route::post('/book/thanks', 'ReserveController@thanks')->name('thanks');
 
 Auth::routes();
 

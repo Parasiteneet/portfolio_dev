@@ -8,17 +8,17 @@ class ReserveController extends Controller
 {
     public function index() 
     {
-        return view('reserve');
+        return view('/book/reserve');
     }
     
     public function confirm(Request $request) 
     {
-
+        return view('/book/confirm');
     }
 
-    public function send(Request $request) 
+    public function thanks(Request $request) 
     {
-
+        return view('/book/thanks');
     }
 
 
