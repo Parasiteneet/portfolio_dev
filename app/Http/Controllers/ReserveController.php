@@ -13,7 +13,16 @@ class ReserveController extends Controller
     
     public function confirm(Request $request) 
     {
+        // $request->validate([
+        //     'booking-name' => 'required',
+        //     'booking-tel' => 'required|unique',
+        //     'booking-day' => 'required',
+        //     'scheduled-time' => 'required',
+        //     'form-comment' => 'max:100',
+        // ]);
+
         return view('/book/confirm');
+
     }
 
     public function thanks(Request $request) 

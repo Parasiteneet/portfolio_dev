@@ -4,6 +4,7 @@
 
   <div class="reservation-form">
     <form method="POST" action="/book/confirm">
+    @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>
           <input type="text" class="form-control" id="booking-name" aria-describedby="input_name" placeholder="お名前を入力して下さい">
@@ -22,15 +23,9 @@
       </div>
       <div class="form-groupe mt-3">
           <label for="form-comment">コメント</label>
-          <input type="textarea" class="form-control" id="form-comment" placeholder="その他、先に伝えたいことなどございましたら、こちらでご記入下さい。" >
+          <input type="textarea" class="form-control" id="form-comment" placeholder="伝えたいことなどございましたら、ご記入下さい。" >
       </div>
-      <!-- 予約フォームで使うテーブルの構成
-      ・name input 
-      ・TEL input 
-      ・日時 input
-      ・予約時のコメント textarea
-      -->
-
+      <button class="btn btn-success mt-4"> 入力内容の確認 </button>
     </form>
   </div>
 @endsection
