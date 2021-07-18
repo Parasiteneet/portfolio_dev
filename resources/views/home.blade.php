@@ -15,6 +15,9 @@
                     @endif
 
                     ご登録いただきありがとうございます。
+
+                    <a class="btn btn-outline-success text-success btn-lg" href="{{ route('reserve') }}" role="button" >ご予約はこちら</a>
+                    <a class="btn btn-outline-info text-info btn-lg" href="{{ route('mypage') }}" role="button" >マイページはこちら</a>
                 </div>
             </div>
         </div>
