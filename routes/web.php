@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('top');
 });
 
+
 Route::get('/book', 'ReserveController@index')->name('reserve');
 
 // Route::post('/book/confirm', 'ReserveController@confirm')->name('confirm');
 
 // Route::post('/book/thanks', 'ReserveController@thanks')->name('thanks');
+
 
 Auth::routes();
 
