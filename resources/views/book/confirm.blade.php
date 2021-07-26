@@ -11,7 +11,7 @@
       </div>
       <div class="form-groupe">
         <label>お電話番号：</label>
-        {{ $inputs['booking-date'] }}
+        {{ $inputs['booking-tel'] }}
         <input name="booking-tel" value="{{ $inputs['booking-tel'] }}" type="hidden" class="form-control" aria-describedby="input_tel">
       </div>
       <div class="form-groupe">
