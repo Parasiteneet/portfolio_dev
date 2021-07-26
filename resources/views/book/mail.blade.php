@@ -9,11 +9,13 @@
   </head>
   <body>
     <div>
-      <p>氏名：{{ $inputs->name }}</p>
-      <p>電話番号：{{ $inputs->tel }}</p>
-      <p>予約日：{{ $inputs->date }}</p>
-      <p>予約時間：{{ $inputs->time }}</p>
-      <p>備考：{{ $inputs->body }}</p>
+      <br>
+        <p>氏名：{{ $name }}</p><br>
+        <p>電話番号：{{ $tel }}</p><br>
+        <p>予約日：{{ $date }}</p><br>
+        <p>予約時間：{{ $time }}</p><br>
+        <p>備考：{{ nl2br($body) }}</p><br>
+      <br>
     </div>
   </body>
 </html>

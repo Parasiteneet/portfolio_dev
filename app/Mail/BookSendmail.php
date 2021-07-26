@@ -43,8 +43,16 @@ class BookSendmail extends Mailable
     public function build()
     {
         return $this
+        ->to('wumabeatboxer@gmail.com')
         ->from('wumabeatboxer@gmail.com')
         ->subject('予約完了メール')
-        ->view('email.mail');
+        ->view('email.mail')
+        ->with([
+            'name' => $this->name,
+            'tel' => $this->tel,
+            'date' => $this->date,
+            'time' => $this->time,
+            'body' => $this->body,
+        ]);
     }
 }

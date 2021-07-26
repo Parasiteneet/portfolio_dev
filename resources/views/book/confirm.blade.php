@@ -32,7 +32,7 @@
         </div>
       @endif
   </div>
-  <button type="submit" class="btn btn-success mt-4" value="submit">予約する</button>
-  <button type="submit" class="btn btn-info text-white mt-4" value="modifying"> 入力内容の変更</button>
+  <button type="submit" name="action" class="btn btn-success mt-4" value="submit">予約する</button>
+  <button type="submit" name="action" class="btn btn-info text-white mt-4" value="modify"> 入力内容の変更</button>
 </form>
 @endsection

@@ -39,6 +39,25 @@ class ReserveController extends Controller
 
     public function thanks(Request $request) 
     {
+        $request->validate([
+            'booking-name' => 'required|string',
+            'booking-tel' => 'required|numeric',
+            'booking-date' => 'required|date',
+            'scheduled-time' => 'required',
+        ]);
+
+        $action = $request->input('action');
+
+        $inputs = $request->except('action');
+
+        if($action !== 'submit') {
+            return redirect()
+            ->route('book.reserve')
+            ->withInput($inputs);// セッション(_old_input)に入力値すべてを入れる
+        } else {
+            Mail::send(new BookSendmail($inputs));
+        }
+
         return view('/book.thanks');
     }
 
