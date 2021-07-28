@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\BookSendmail;
 
 class ReserveController extends Controller
 {
@@ -52,10 +53,17 @@ class ReserveController extends Controller
 
         if($action !== 'submit') {
             return redirect()
-            ->route('book.reserve')
+            ->route('reserve')
             ->withInput($inputs);// セッション(_old_input)に入力値すべてを入れる
         } else {
-            Mail::send(new BookSendmail($inputs));
+            $to = [
+                [
+                    'email' => 'wumabeatboxer@gmail.com', 
+                    'name' => 'Test',
+                ]
+            ];
+            
+            \Mail::to($to)->send(new BookSendmail($inputs));
         }
 
         return view('/book.thanks');
