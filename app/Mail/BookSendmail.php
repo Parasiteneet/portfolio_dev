@@ -46,7 +46,7 @@ class BookSendmail extends Mailable
         ->to('wumabeatboxer@gmail.com')
         ->from('wumabeatboxer@gmail.com')
         ->subject('予約完了メール')
-        ->view('email.mail')
+        ->view('book.mail')
         ->with([
             'name' => $this->name,
             'tel' => $this->tel,

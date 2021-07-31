@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BookSendmail;
+use App\Mail\BookSendmail;
 
 class ReserveController extends Controller
 {
@@ -56,13 +56,8 @@ class ReserveController extends Controller
             ->route('reserve')
             ->withInput($inputs);// セッション(_old_input)に入力値すべてを入れる
         } else {
-            $to = [
-                [
-                    'email' => 'wumabeatboxer@gmail.com', 
-                    'name' => 'Test',
-                ]
-            ];
-            
+            $inputs = $request->all();
+            $to = "wumabeatboxer@gmail.com";
             \Mail::to($to)->send(new BookSendmail($inputs));
         }
 
