@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-  <h2>This is Top page</h2>
+  <h2>WELCOME TO MY CHANNEL</h2>
 @endsection
