@@ -60,8 +60,8 @@ class ReserveController extends Controller
             $to = "wumabeatboxer@gmail.com";
             \Mail::to($to)->send(new BookSendmail($inputs));
         }
-
-        return view('/book.thanks');
+        
+        return redirect()->route('manage');
     }
 
 

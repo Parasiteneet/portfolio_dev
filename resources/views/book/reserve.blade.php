@@ -33,18 +33,18 @@
       @endif
       </div>
       <div class="form-groupe mt-3">
-          <label for="scheduled-time">ご予約時間</label>
-          <input name="scheduled-time" type="time" value="{{ old('booking-time') }}" step="900" class="form-control" id="scheduled-time"> 
+          <label for="scheduled-time">ご予約時間（30分間隔）</label>
+          <input name="scheduled-time" type="time" value="17:30" step="1800" class="form-control" id="scheduled-time"> 
       @if ($errors->has('scheduled-time'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('scheduled-time') }}</p>
         </div>
       @endif
       </div>
-      <div class="form-groupe mt-3">
+      <!-- <div class="form-groupe mt-3">
           <label for="form-comment">お問い合わせ</label>
           <input name="form-comment" type="textarea" value="{{ old('form-comment') }}" class="form-control" id="form-comment" placeholder="伝えたいことなどございましたら、ご記入下さい。" >
-      </div>
+      </div> -->
       <button type="submit" class="btn btn-success mt-4"> 入力内容の確認 </button>
     </form>
   </div>

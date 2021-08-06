@@ -17,7 +17,6 @@ class BookSendmail extends Mailable
     private $tel;
     private $date;
     private $time;
-    private $body;
 
 
 
@@ -32,7 +31,6 @@ class BookSendmail extends Mailable
         $this->tel = $inputs['booking-tel'];
         $this->date = $inputs['booking-date'];
         $this->time = $inputs['scheduled-time'];
-        $this->body = $inputs['form-comment'];
     }
 
     /**
@@ -52,7 +50,6 @@ class BookSendmail extends Mailable
             'tel' => $this->tel,
             'date' => $this->date,
             'time' => $this->time,
-            'body' => $this->body,
         ]);
     }
 }

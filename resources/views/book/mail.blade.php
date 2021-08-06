@@ -14,7 +14,6 @@
         <p>電話番号：{{ $tel }}</p><br>
         <p>予約日：{{ $date }}</p><br>
         <p>予約時間：{{ $time }}</p><br>
-        <p>備考：{{ nl2br($body) }}</p><br>
       <br>
     </div>
   </body>
