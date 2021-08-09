@@ -66,7 +66,7 @@ class ReserveController extends Controller
 
     // public function edit(Request $request)
     // {
-        
+            
     // }
 
     // public function delete(Request $request)

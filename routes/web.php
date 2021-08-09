@@ -29,8 +29,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/mypage', 'MypageController@index')->middleware('auth')->name('mypage');
 
-Route::get('/manage', function () {
-    return view('manage');
+Route::get('/management/manage', function () {
+    return view('/management/manage');
 })->middleware('auth')->name('manage');
 
 
