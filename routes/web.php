@@ -33,8 +33,9 @@ Route::get('/management/manage', function () {
     return view('/management/manage');
 })->middleware('auth')->name('manage');
 
-Route::get('/book/test','TestController@show');
-Route::post('/book/test','TestController@test');
+
+// Route::get('/book/test','TestController@show');
+// Route::post('/book/test','TestController@test');
 
 
 

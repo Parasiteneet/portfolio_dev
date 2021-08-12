@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
+use Auth;
 use App\Mail\BookSendmail;
 
 class ReserveController extends Controller
@@ -56,12 +58,23 @@ class ReserveController extends Controller
             ->route('reserve')
             ->withInput($inputs);// セッション(_old_input)に入力値すべてを入れる
         } else {
+            $book = new Book;
+            $book->name = $request->input('booking-name');
+            $book->tel = $request->input('booking-tel');
+            $book->date = $request->input('booking-date');
+            $book->time = $request->input('scheduled-time');;
+            $book->user_id = Auth::id();
+
+            $book->save();
+
             $inputs = $request->all();
             $to = "wumabeatboxer@gmail.com";
             \Mail::to($to)->send(new BookSendmail($inputs));
         }
-        
-        return redirect()->route('manage');
+
+         $name = auth()->user()->name;
+         return view('book.thanks',compact('name'));
+        // return redirect()->route('manage');
     }
 
     // public function edit(Request $request)
