@@ -15,25 +15,29 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/book/', 'ReserveController@index')->name('reserve');
+    Route::post('/book/confirm', 'ReserveController@confirm')->name('confirm');
+    Route::post('book/thanks', 'ReserveController@thanks')->name('thanks');
+});
 
-Route::get('/book', 'ReserveController@index')->name('reserve');
-
-Route::post('/book/confirm', 'ReserveController@confirm')->name('confirm');
-
-Route::post('/book/thanks', 'ReserveController@thanks')->name('thanks');
-
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/management/manage','ManageController@index')->name('manage');
+    Route::get('/management/edit','ManageController@edit')->name('edit');
+});
 
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/mypage', 'MypageController@index')->middleware('auth')->name('mypage');
 
-Route::get('/management/manage', function () {
-    return view('/management/manage');
-})->middleware('auth')->name('manage');
 
 
+/*
+---DBにINSERTできているかのテスト
+*/
 // Route::get('/book/test','TestController@show');
 // Route::post('/book/test','TestController@test');
 
