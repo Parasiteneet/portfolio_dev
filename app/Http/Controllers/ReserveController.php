@@ -77,6 +77,7 @@ class ReserveController extends Controller
         // return redirect()->route('manage');
     }
 
+    
     // public function edit(Request $request)
     // {
             
