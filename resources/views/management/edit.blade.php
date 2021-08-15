@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="reservation-form">
-    <form method="POST" action="{{ route('confirm') }}">
+    <form method="POST" action="{{ route('update') }}">
     @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>
-          <input name="booking-name" value="{{ old('booking-name') }}" type="text" class="form-control" id="booking-name" aria-describedby="input_name" placeholder="お名前を入力して下さい">
+          <input name="booking-name" value="{{ $booking->name }}" type="text" class="form-control" id="booking-name" aria-describedby="input_name" placeholder="お名前を入力して下さい">
       @if ($errors->has('booking-name'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-name') }}</p>
@@ -15,7 +15,7 @@
       </div>
       <div class="form-groupe mt-3">
         <label for="booking-tel">お電話番号</label>
-          <input name="booking-tel" type="tel" value="{{ old('booking-tel') }}" class="form-control" id="booking-tel" aria-describedby="input_tel" placeholder="お電話番号">
+          <input name="booking-tel" type="tel" value="{{ $booking->tel }}" class="form-control" id="booking-tel" aria-describedby="input_tel" placeholder="お電話番号">
       @if ($errors->has('booking-tel'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-tel') }}</p>
@@ -24,7 +24,7 @@
       </div>
       <div class="form-groupe mt-3">
         <label for="booking-date">ご予約日</label>
-          <input name="booking-date" type="date" value="{{ old('booking-date') }}" class="form-control" id="booking-date" aria-describedby="input_day" placeholder="ご予約をご希望の日にち" value="<?php echo date('Y-m-d'); ?>">
+          <input name="booking-date" type="date" value="{{ $booking->date }}" class="form-control" id="booking-date" aria-describedby="input_day" placeholder="ご予約をご希望の日にち" value="<?php echo date('Y-m-d'); ?>">
       @if ($errors->has('booking-date'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-date') }}</p>
@@ -40,7 +40,7 @@
         </div>
       @endif
       </div>
-      <button type="submit" class="btn btn-success mt-4"> 入力内容の確認 </button>
+      <button type="submit" class="btn btn-success mt-4"> ご予約を変更する </button>
     </form>
   </div>
 @endsection

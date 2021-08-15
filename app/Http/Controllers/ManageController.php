@@ -3,8 +3,8 @@
 namespace App;
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Book;
-
 use Illuminate\Http\Request;
 use Auth;
 
@@ -12,29 +12,30 @@ class ManageController extends Controller
 {
      public function index()
      {
-         $user = User::find($user->id);
-         $book = Book::where('user_id', $user->id)
-            ->orderBy('created_at', 'desc')
-            ->first();
-
-        //  if ($user === $id) {
-        //      $book = Book::orderBy('created_at','desc')
-        //      ->first();
-        //  }
-
-        // $book = Book::all();
-
-         return view('/management/manage',compact('user','id'));
+         $name = auth()->user()->name;
+         return view('/management/manage',compact('name'));
      }
 
      public function edit(Request $request) 
      {
+        $user_id = auth()->user()->id;;
+        $booking = DB::table('books')
+         ->where('user_id','=',$user_id)
+         ->orderBy('created_at','desc')
+         ->first();
 
-        return view('/management/edit');
+        return view('/management/edit',compact('user','booking'));
      }
 
      public function update(Request $request)
      {
+        $request->validate([
+            'booking-name' => 'required|string',
+            'booking-tel' => 'required|numeric',
+            'booking-date' => 'required|date',
+            'scheduled-time' => 'required',
+        ]);
 
+        $inputs = $request->all();
      }
 }
