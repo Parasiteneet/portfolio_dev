@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="reservation-form">
-    <form method="POST" action="{{ route('update') }}">
+    <form method="POST" action="">
     @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>

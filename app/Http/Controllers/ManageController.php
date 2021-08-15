@@ -24,7 +24,7 @@ class ManageController extends Controller
          ->orderBy('created_at','desc')
          ->first();
 
-        return view('/management/edit',compact('user','booking'));
+        return view('/management/edit',compact('user_id','booking'));
      }
 
      public function update(Request $request)
