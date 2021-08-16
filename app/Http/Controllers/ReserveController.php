@@ -58,14 +58,14 @@ class ReserveController extends Controller
             ->route('reserve')
             ->withInput($inputs);// セッション(_old_input)に入力値すべてを入れる
         } else {
-            $book = new Book;
-            $book->name = $request->input('booking-name');
-            $book->tel = $request->input('booking-tel');
-            $book->date = $request->input('booking-date');
-            $book->time = $request->input('scheduled-time');;
-            $book->user_id = Auth::id();
+            $booking = new Book;
+            $booking->name = $request->input('booking-name');
+            $booking->tel = $request->input('booking-tel');
+            $booking->date = $request->input('booking-date');
+            $booking->time = $request->input('scheduled-time');;
+            $booking->user_id = Auth::id();
 
-            $book->save();
+            $booking->save();
 
             $inputs = $request->all();
             $to = "wumabeatboxer@gmail.com";

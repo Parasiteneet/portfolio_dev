@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="reservation-form">
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('update') }}">
     @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>

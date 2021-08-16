@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/management/manage','ManageController@index')->name('manage');
     Route::get('/management/edit','ManageController@edit')->name('edit');
+    Route::post('/management/update','ManageController@update')->name('update');
 });
 
 Auth::routes();
