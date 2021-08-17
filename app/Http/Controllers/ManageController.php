@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class ManageController extends Controller
 {
+      
      public function index()
      {
          $name = auth()->user()->name;
@@ -19,19 +20,11 @@ class ManageController extends Controller
 
      public function edit(Request $request) 
      {
-        $user_id = auth()->user()->id;
-        $booking = DB::table('books')
-         ->where('user_id','=',$user_id)
-         ->orderBy('created_at','desc')
-         ->first();
-
-
-      //   $booking = DB::table('books')
-      //    ->where('user_id','=',$user_id)
-      //    ->orderBy('created_at','desc')
-      //    ->first();
-
-        return view('/management/edit',compact('user_id','booking'));
+        $user = auth()->user()->id;
+        $rsv = Book::where('user_id','=',$user)
+        ->orderBy('created_at','desc')
+        ->first();
+        return view('/management/edit',compact('user','rsv'));
      }
 
      public function update(Request $request)
@@ -57,9 +50,32 @@ class ManageController extends Controller
            $rsv->user_id = Auth::id();
            $rsv->save();
         } else {
-         return redirect()
-         ->route('manage');
+         return redirect()->route('manage');
         }
         return redirect()->route('mypage');
      }
+
+     public function delete(Request $request) 
+     {
+         $user = auth()->user()->id;
+         $rsv = Book::where('user_id','=',$user)
+         ->orderBy('created_at','desc')
+         ->first();
+         return view('/management/delete',compact('user','rsv'));
+      } 
+
+      public function erase(Request $request) 
+      {
+         $user = auth()->user()->id;
+         $rsv = Book::where('user_id','=',$user)
+         ->orderBy('created_at','desc')
+         ->first();
+
+         if ($user === $rsv->user_id) {
+            $rsv->delete();
+         } else {
+            return redirect()->route('manage');
+         }
+         return redirect()->route('mypage');
+      }
 }

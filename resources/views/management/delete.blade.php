@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="reservation-form">
-    <form method="POST" action="{{ route('update') }}">
+    <form method="POST" action="{{ route('erase') }}">
     @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>
@@ -39,7 +39,7 @@
         </div>
       @endif
       </div>
-      <button type="submit" class="btn btn-success mt-4"> ご予約を変更する </button>
+      <button type="submit" class="btn btn-outline-info text-info btn-lg mt-4"> ご予約を削除する </button>
     </form>
   </div>
 @endsection
