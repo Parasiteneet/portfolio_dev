@@ -6,8 +6,9 @@
         <h3>{{ $name }}様、ようこそ！</h3><br>
         <p class="lead">ご使用のメールアドレス</p>
         <p class="lead">{{ $mail }}</p>
-        @if 
-        <p class="lead">ご予約中のお日にち：{{ $booking->date }}</p>
+        @if ($rsv->date > $today) 
+        <p class="lead">ご予約中のお日にち：{{ $rsv->date }}</p>
+        @endif
         <hr class="my-4">
  <a class="btn btn-outline-success text-success btn-lg" href="{{ route('reserve') }}" role="button" >ご予約はこちらから</a><br>
  <a class="btn btn-outline-info text-info btn-lg mt-3" href="{{ route('edit') }}" role="button" >ご予約の変更はこちら</a>

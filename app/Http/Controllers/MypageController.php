@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Book;
 use Illuminate\Http\Request;
 
 class MypageController extends Controller
@@ -12,16 +13,15 @@ class MypageController extends Controller
     {
 
         $user_id = auth()->user()->id;;
-        $booking = DB::table('books')
-         ->where('user_id','=',$user_id)
+        $rsv = Book::where('user_id','=',$user_id)
          ->orderBy('updated_at','desc')
          ->first();
+        $name = auth()->user()->name;
+        $mail = auth()->user()->email;
+        $today = Carbon::today('Asia/Tokyo');
 
-
-            $name = auth()->user()->name;
-            $mail = auth()->user()->email;
     
-            return view('mypage', compact('name', 'mail','booking'));
+            return view('mypage', compact('name', 'mail','rsv','today'));
     }
 
 }
