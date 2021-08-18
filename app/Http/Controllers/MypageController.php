@@ -19,7 +19,7 @@ class MypageController extends Controller
         $name = auth()->user()->name;
         $mail = auth()->user()->email;
         $today = Carbon::today('Asia/Tokyo');
-
+        
     
             return view('mypage', compact('name', 'mail','rsv','today'));
     }
