@@ -31,7 +31,7 @@ class BookRequest extends FormRequest
             'scheduled-time' => 'required',
         ];
     }
-    /**
+    /**e
      * Customization for messages in Japanse
      *
      * @return array
