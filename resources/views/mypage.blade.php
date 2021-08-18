@@ -7,7 +7,7 @@
         <p class="lead">ご使用のメールアドレス</p>
         <p class="lead">{{ $mail }}</p>
         @isset($rsv->date)
-        @if ($rsv->date > $today) 
+        @if($rsv->date > $today) 
         <p class="lead">ご予約中のお日にち：{{ $rsv->date??"予約はございません" }}</p>
         @endif
         @endisset
