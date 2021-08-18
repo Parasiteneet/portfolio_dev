@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Book;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookRequest;
 use Illuminate\Support\Facades\DB;
 
 
@@ -18,7 +19,7 @@ class ManageController extends Controller
          return view('/management/manage',compact('name'));
      }
 
-     public function edit(Request $request) 
+     public function edit() 
      {
         $user = auth()->user()->id;
         $rsv = Book::where('user_id','=',$user)
@@ -27,15 +28,8 @@ class ManageController extends Controller
         return view('/management/edit',compact('user','rsv'));
      }
 
-     public function update(Request $request)
+     public function update(BookRequest $request)
      {
-        $request->validate([
-            'booking-name' => 'required|string',
-            'booking-tel' => 'required|numeric',
-            'booking-date' => 'required|date',
-            'scheduled-time' => 'required',
-        ]);
-
         $user = auth()->user()->id;
         $rsv = Book::where('user_id','=',$user)
         ->orderBy('created_at','desc')

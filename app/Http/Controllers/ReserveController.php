@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Book;
-use Illuminate\Http\Request;
 use Auth;
+use App\Book;
 use App\Mail\BookSendmail;
+use Illuminate\Http\Request;
+use App\Http\Requests\BookRequest;
 
 class ReserveController extends Controller
 {
@@ -24,31 +25,15 @@ class ReserveController extends Controller
      *
      * @param  Request  $request
      */
-    public function confirm(Request $request) 
+    public function confirm(BookRequest $request) 
     {
-
-        $request->validate([
-            'booking-name' => 'required|string',
-            'booking-tel' => 'required|numeric',
-            'booking-date' => 'required|date',
-            'scheduled-time' => 'required',
-        ]);
-
         $inputs = $request->all();
 
         return view('/book.confirm', ['inputs' => $inputs]);
-
     }
 
-    public function thanks(Request $request) 
+    public function thanks(BookRequest $request) 
     {
-        $request->validate([
-            'booking-name' => 'required|string',
-            'booking-tel' => 'required|numeric',
-            'booking-date' => 'required|date',
-            'scheduled-time' => 'required',
-        ]);
-
         $action = $request->input('action');
 
         $inputs = $request->except('action');
