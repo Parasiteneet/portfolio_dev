@@ -56,9 +56,7 @@ class ReserveController extends Controller
             $to = "wumabeatboxer@gmail.com";
             \Mail::to($to)->send(new BookSendmail($inputs));
         }
-
          $name = auth()->user()->name;
          return view('book.thanks',compact('name'));
-        // return redirect()->route('manage');
     }
 }
