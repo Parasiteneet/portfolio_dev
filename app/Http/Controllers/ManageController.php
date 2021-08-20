@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Book;
+use App\Mail\BookSendmail;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookRequest;
 use Illuminate\Support\Facades\DB;
@@ -43,6 +44,10 @@ class ManageController extends Controller
            $rsv->time = $request->input('scheduled-time');
            $rsv->user_id = Auth::id();
            $rsv->save();
+
+           $inputs = $request->all();
+           $to = "wumabeatboxer@gmail.com";
+           \Mail::to($to)->send(new BookSendmail($inputs));
         } else {
          return redirect()->route('manage');
         }
