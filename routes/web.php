@@ -15,8 +15,13 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::get('/without', function() {
+    return view('without');
+});
+
+
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/book/', 'ReserveController@index')->name('reserve');
+    Route::get('/book', 'ReserveController@index')->name('reserve');
     Route::post('/book/confirm', 'ReserveController@confirm')->name('confirm');
     Route::post('book/thanks', 'ReserveController@thanks')->name('thanks');
 });
