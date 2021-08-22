@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Carbon\Carbon;
 use App\Book;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MypageController extends Controller
@@ -24,4 +24,8 @@ class MypageController extends Controller
             return view('mypage', compact('name', 'mail','rsv','today'));
     }
 
+    public function top()
+    {
+        return view('top');
+    }
 }
