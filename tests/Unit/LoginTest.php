@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+
 use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -23,12 +24,20 @@ class LoginTest extends TestCase
     //     $this->user= factory(User::class)->create();
     // }
 
+    // public function setUp(): void 
+    // {
+    //     dd(env('APP_ENV'), env('DB_HOST'));
+    //     parent::setUp();
+    // }
+
+
+
     /**
      * ログイン画面を表示
      *
      *
      */
-    public function loginPage(): void
+    public function testloginPage(): void
     {
         $response = $this->get('/login');
         $response->assertStatus(200);
@@ -38,10 +47,12 @@ class LoginTest extends TestCase
     /**
      * マイページ表示->認証失敗ログインページへリダイレクト
      *
-     * 
+     *  @test
      */
-    public function withoutLogin():void
+    public function testMypage():void
     {
+
+        $this->withoutExceptionHandling();
         $response = $this->get('/mypage');
         $response->assertStatus(302)->assertRedirect('/login');
         $this->assertGuest();

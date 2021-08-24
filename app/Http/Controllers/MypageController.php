@@ -12,7 +12,7 @@ class MypageController extends Controller
     public function index() 
     {
 
-        $user_id = auth()->user()->id;;
+        $user_id = auth()->user()->id;
         $rsv = Book::where('user_id','=',$user_id)
          ->orderBy('updated_at','desc')
          ->first();
