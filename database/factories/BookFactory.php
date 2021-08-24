@@ -9,10 +9,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
-        'name' =>$faker->name, 
+        'name' =>$faker->name(),
         'tel' =>$faker->phoneNumber(),
         'date' =>$faker->date('Y-m-d',$max=‘now’),
-        'time' =>,$faker->time(),
+        'time' =>$faker->time('H:i', $max='now'),
         'user_id' => function() {
             return factory(User::class)->create()->id;
         },
