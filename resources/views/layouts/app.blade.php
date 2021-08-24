@@ -24,6 +24,7 @@
       body 
       {
         background-color:#8effc6;
+        /* background-color:#2c356d; */
       }
     </style>  
 </head>
