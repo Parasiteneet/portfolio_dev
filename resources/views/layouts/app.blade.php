@@ -18,23 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
-     <!-- カレンダー用 -->
-    <!-- <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">  -->
-    <style>
-      body 
-      {
-        background-color:#8effc6;
-        /* background-color:#2c356d; */
-      }
-    </style>  
 </head>
 <body>
     <div id="app">
         @include('nav')
-
         <main class="py-4">
             <div class="container">
-                @yield('content')
+                 @yield('content')
             </div>
         </main>
     </div>
