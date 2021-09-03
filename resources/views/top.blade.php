@@ -29,7 +29,7 @@
   <main>
     <div class="nav-container">
       <nav>
-        <h1 id="logo">EZRV</h1>
+        <h1 id="logo">EZBKING</h1>
         <ul>
           <li class="reg"><a href="{{ route('register') }}">Register</a></li>
           <li class="login"><a href="{{ route('login') }}">Login</a></li>
@@ -38,11 +38,13 @@
     </div>
     <section class="home">
       <div class="showcase">
-         <h2 id="grid-h2">reg<h2>
+         <h2 id="grid-h2"><a href="{{ route('input') }}">Go bookin!</a><h2>
+           <p>↑を押してすぐに予約</p>
          <img id="phone" class="grid-img" src="/images/smart.jpeg" alt="Picture">
          <div class="info">
            <h3>Easy booking, Whoever wants.</h3>
-           <p>このサイトは誰でも簡単に面倒な登録などもなく、予約することが可能です。</p>
+           <p>このサイトは誰でも簡単に面倒な登録</p>
+           <p>などもなく、予約することが可能です。</p>
          </div>
       </div>
     </section>
