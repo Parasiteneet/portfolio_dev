@@ -29,7 +29,7 @@
   <main>
     <div class="nav-container">
       <nav>
-        <h1 id="logo">EZBKING</h1>
+        <h1 id="logo"><a href="{{ route('top') }}">EZBKING</a></h1>
         <ul>
           <li class="reg"><a href="{{ route('register') }}">Register</a></li>
           <li class="login"><a href="{{ route('login') }}">Login</a></li>
