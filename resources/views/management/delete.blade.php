@@ -39,7 +39,8 @@
         </div>
       @endif
       </div>
-      <button type="submit" class="btn btn-outline-info text-info btn-lg mt-4"> ご予約を削除する </button>
+      <button type="submit" class="btn btn-secondary mt-4"> ご予約を削除する </button>
+      <button type="button" onClick="history.back()" class="btn btn-secondary mt-4">管理画面に戻る</button>
     </form>
   </div>
 @endsection

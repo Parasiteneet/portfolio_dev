@@ -31,8 +31,8 @@
           <input name="form-comment" value="{{ $inputs['form-comment'] }}" type="hidden" class="form-control" aria-describedby="input_name">
         </div>
       @endif -->
-    <button type="submit" name="action" class="btn btn-success mt-4" value="submit">予約する</button>
-    <button type="submit" name="action" class="btn btn-info text-white mt-4" value="modify"> 入力内容の変更</button>
+    <button type="submit" name="action" class="btn btn-secondary mt-4" value="submit">予約する</button>
+    <button type="submit" name="action" class="btn btn-secondary mt-4" value="modify"> 入力内容の変更</button>
   </form>
 </div>
 @endsection

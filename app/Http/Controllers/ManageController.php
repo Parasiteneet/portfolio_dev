@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Book;
+use Carbon\Carbon;
 use App\Mail\BookSendmail;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookRequest;
@@ -16,8 +17,14 @@ class ManageController extends Controller
       
      public function index()
      {
+         $user_id = auth()->user()->id;
          $name = auth()->user()->name;
-         return view('/management/manage',compact('name'));
+         $rsv = Book::where('user_id','=',$user_id)
+         ->orderBy('updated_at','desc')
+         ->first();
+         $today = Carbon::today('Asia/Tokyo');
+
+         return view('/management/manage',compact('name','rsv','today'));
      }
 
      public function edit() 
