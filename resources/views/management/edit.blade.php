@@ -5,7 +5,7 @@
     @csrf
       <div class="form-groupe">
         <label for="booking-name">お名前</label>
-          <input name="booking-name" value="{{ $rsv->name }}" type="text" class="form-control" id="booking-name" aria-describedby="input_name" placeholder="お名前を入力して下さい">
+          <input name="booking-name" value="{{ optional($rsv)->name }}" type="text" class="form-control" id="booking-name" aria-describedby="input_name" placeholder="お名前を入力して下さい">
       @if ($errors->has('booking-name'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-name') }}</p>
@@ -14,7 +14,7 @@
       </div>
       <div class="form-groupe mt-3">
         <label for="booking-tel">お電話番号</label>
-          <input name="booking-tel" type="tel" value="{{ $rsv->tel }}" class="form-control" id="booking-tel" aria-describedby="input_tel" placeholder="お電話番号">
+          <input name="booking-tel" type="tel" value="{{ optional($rsv)->tel }}" class="form-control" id="booking-tel" aria-describedby="input_tel" placeholder="お電話番号">
       @if ($errors->has('booking-tel'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-tel') }}</p>
@@ -23,7 +23,7 @@
       </div>
       <div class="form-groupe mt-3">
         <label for="booking-date">ご予約日</label>
-          <input name="booking-date" type="date" value="{{ $rsv->date }}" class="form-control" id="booking-date" aria-describedby="input_day" placeholder="ご予約をご希望の日にち" value="<?php echo date('Y-m-d'); ?>">
+          <input name="booking-date" type="date" value="{{ optional($rsv)->date }}" class="form-control" id="booking-date" aria-describedby="input_day" placeholder="ご予約をご希望の日にち" value="<?php echo date('Y-m-d'); ?>">
       @if ($errors->has('booking-date'))
         <div class="alert alert-danger">
           <p class="error-message">{{ $errors->first('booking-date') }}</p>

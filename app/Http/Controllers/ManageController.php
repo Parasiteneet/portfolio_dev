@@ -22,18 +22,24 @@ class ManageController extends Controller
          $rsv = Book::where('user_id','=',$user_id)
          ->orderBy('updated_at','desc')
          ->first();
+         $mail = auth()->user()->email;
          $today = Carbon::today('Asia/Tokyo');
 
-         return view('/management/manage',compact('name','rsv','today'));
+         return view('/management/manage',compact('name','rsv','mail','today'));
      }
 
      public function edit() 
      {
-        $user = auth()->user()->id;
-        $rsv = Book::where('user_id','=',$user)
-        ->orderBy('created_at','desc')
-        ->first();
-        return view('/management/edit',compact('user','rsv'));
+           $user = auth()->user()->id;
+           $rsv = Book::where('user_id','=',$user)
+           ->orderBy('created_at','desc')
+           ->first();
+           
+           if (isset($user,$rsv)) {
+              return view('/management/edit',compact('user','rsv'));
+             } else {
+                return redirect()->route('top');
+             }
      }
 
      public function update(BookRequest $request)
@@ -63,11 +69,15 @@ class ManageController extends Controller
 
      public function delete(Request $request) 
      {
-         $user = auth()->user()->id;
-         $rsv = Book::where('user_id','=',$user)
-         ->orderBy('created_at','desc')
-         ->first();
-         return view('/management/delete',compact('user','rsv'));
+        $user = auth()->user()->id;
+        $rsv = Book::where('user_id','=',$user)
+        ->orderBy('created_at','desc')
+        ->first();
+        if (isset($user,$rsv)) {
+           return view('/management/delete',compact('user','rsv'));
+        } else {
+         return redirect()->route('top');
+        }
       } 
 
       public function erase(Request $request) 
