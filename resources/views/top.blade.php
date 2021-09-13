@@ -40,7 +40,7 @@
       <div class="showcase">
          <h2 id="grid-h2"><a href="{{ route('input') }}">Go bookin!</a><h2>
            <p>↑を押してすぐに予約</p>
-         <img id="phone" class="grid-img" src="/images/smart.jpeg" alt="Picture">
+         <img style="-webkit-user-select: none;" id="phone" class="grid-img" src="/images/smart.jpeg" alt="Picture">
          <div class="info">
            <h3>Easy booking, Whoever wants.</h3>
            <p>このサイトは誰でも簡単に面倒な登録</p>
