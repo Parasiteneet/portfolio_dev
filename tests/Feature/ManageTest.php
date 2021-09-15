@@ -12,7 +12,7 @@ class ManageTest extends TestCase
 {
 
     use RefreshDatabase;
-    
+
     /** @test */
     public function only_logged_in_users_can_see_the_management_page() 
     {
@@ -36,8 +36,18 @@ class ManageTest extends TestCase
 
         $this->actingAs(factory(User::class)->create());
         
-        $response = $this->post('/management/update', factory(Book::class)->create());
+        $response = $this
+            ->from('/management/manage')
+            ->post('/management/update',
+                [
+                    'name' => 'taro',
+                    'tel' => '08012345678',
+                    'date' => '2021-09-05',
+                    'time' =>'17:30',
+                    'user_id' => '1',
+                ]
+            );
 
-        $response->assertRedirect('/mypage');
-    }
+            $response->assertRedirect('/management/manage');
+        }
 }
