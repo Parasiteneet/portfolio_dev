@@ -6,6 +6,7 @@ use Auth;
 use App\User;
 use App\Book;
 use Tests\TestCase;
+use App\Mail\BookSendmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReserveTest extends TestCase
@@ -57,5 +58,27 @@ class ReserveTest extends TestCase
             $response->assertViewIs('.book.confirm');
     }
 
-    
+    /** @test */    
+    public function users_can_store_booking_form()
+    {
+        $this->withoutExceptionHandling();
+
+        $response = $this
+            ->actingAs($this->user)
+            ->post('/book/thanks',   
+            [
+                'action' => 'submit',
+                'booking-name' => 'reserve',
+                'booking-tel' => '08012345678',
+                'booking-date' => '2021-09-05',
+                'scheduled-time' =>'17:30',
+                'user_id' => '1',                
+            ])
+            ->assertOk()
+            ->assertDatabaseHas('books', [
+                "name" => 'reserve',
+            ]);
+
+        $response->assertViewIs('.book.thanks');
+    }
 }

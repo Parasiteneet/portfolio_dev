@@ -83,7 +83,7 @@ class ManageTest extends TestCase
     }
 
      /** @test */
-     public function a_user_can_delete_the_booking_form() 
+     public function users_can_delete_the_booking_form() 
      {
 
         $this->withoutExceptionHandling();
