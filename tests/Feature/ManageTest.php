@@ -36,18 +36,20 @@ class ManageTest extends TestCase
             ->assertViewIs('.management.manage');
     }
 
-        /** @test */
-        public function users_have_a_reservation_can_see_the_edit_page() 
-        {
-            $response = $this->actingAs($this->user)
-                ->get('/management/edit')
-                ->assertOk();
-        }
+    /** @test */
+    public function users_have_a_reservation_can_see_the_edit_page() 
+    {
+        $this->withoutExceptionHandling();
+    
+        $response = $this->actingAs($this->user)
+            ->get('/management/edit')
+            ->assertOk();
+    }
 
     /** @test */
     public function a_user_can_update_the_booking_form()
     {
-        // $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
         $this->actingAs($this->user);
         
@@ -68,24 +70,42 @@ class ManageTest extends TestCase
         /** @test */
     public function users_have_a_reservation_can_see_the_delete_page() 
     {
+        $this->withoutExceptionHandling();
+
+        $this->assertDatabaseHas('books', [
+            'id' => '1',
+            'tel' => '08011112222',
+        ]);
 
         $response = $this->actingAs($this->user)
-        ->get('/management/delete')
-        ->assertOk();
+            ->get('/management/delete')
+            ->assertOk();
     }
 
      /** @test */
      public function a_user_can_delete_the_booking_form() 
      {
 
-         $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
-         $this->actingAs(factory(User::class)->create());
+        $this->actingAs($this->user);
 
-         $rsv = factory(Book::class)->create();
-         $response = $this->get('/management/delete', ['user_id' => $rsv->user_id]);
-         $response->assertRedirect('/');
+        $this->assertDatabaseHas('books', [
+            'id' => '1',
+        ]);         
+
+        $response = $this
+            ->from('/mypage')
+            ->delete('/management/delete');
+        
+        $response->assertRedirect('/mypage');
+
+        $this->assertDatabaseMissing('books', [
+            'id' => '1',            
+        ]);
         
         
      }
 }
+
+
