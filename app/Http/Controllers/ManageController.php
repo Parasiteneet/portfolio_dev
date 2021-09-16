@@ -87,7 +87,7 @@ class ManageController extends Controller
          ->orderBy('created_at','desc')
          ->first();
 
-         if ($user === $rsv->user_id) {
+         if ($user === optional($rsv)->user_id) {
             $rsv->delete();
          } else {
             return redirect()->route('manage');

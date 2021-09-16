@@ -10,7 +10,7 @@ use Faker\Generator as Faker;
 $factory->define(Book::class, function (Faker $faker) {
     return [
         'name' =>$faker->name(),
-        'tel' =>$faker->phoneNumber(),
+        'tel' => '08011112222',
         'date' =>$faker->date('Y-m-d',$max='now'),
         'time' =>$faker->time('H:i', $max='now'),
         'user_id' => function() {
