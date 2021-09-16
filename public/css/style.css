@@ -1,0 +1,195 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: white;
+  height:1080px;
+  width:100%;
+  background: radial-gradient(#525252, #131313);
+  font-family: "Montserrat", sans-serif;
+  min-width:none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Lobster", sans-serif;
+  font-weight: lighter;
+}
+
+h2 {
+   font-size: 6rem;
+   font-family: "Lobster", sans-serif;
+   font-weight: lighter;
+   color:white;
+}
+
+h3 {
+  font-size: 3rem;
+  font-family: "Lobster", sans-serif;
+  font-weight: lighter;
+}
+
+p {
+  font-size:2rem;
+  font-family: "Klee One" !Important;
+}
+
+li {
+  font-size: 2rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-container {
+  background: rgb(7, 7, 7);
+}
+
+nav {
+  width: 80%;
+  margin: auto;
+  min-height: 0vh;
+  padding: 3rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  list-style: none;
+}
+
+#logo {
+  flex: 3;
+  position: relative;
+}
+
+#logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 6rem;
+  background: #f54538;
+  border-radius: 50%;
+  transform: translate(-10%, -20%);
+  mix-blend-mode: screen;
+}
+
+.reg {
+  background: #f54538;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+
+.login {
+  background: #f54538;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+
+.showcase h2 {
+  padding-top:10px;
+  margin-left: 10%;
+}
+
+
+.grid-img {
+  margin-left:30%;
+  height:350px;
+  width:350px;
+  border-radius:25%; 
+}
+
+.info {
+  margin-left:60%;
+}
+
+.info h3 {
+  padding-bottom: 2rem;
+}
+
+/* responsive */
+@media (max-width: 1200px) {
+  html {
+    font-size: 50%;
+  }
+  nav #logo {
+    flex: 1;
+  }
+  nav ul {
+    margin-left: 5rem;
+  }
+  nav li {
+    margin-left: 5rem;
+  }
+  .showcase {
+    grid-template-columns: 10% 1fr 10%;
+  }
+  .showcase img {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+    margin-top: 10%;
+    margin-right:28%;
+  }
+  .showcase img,h2,.info {
+    text-align: center;
+  }
+  .info {
+    margin-top: 5%;
+    margin-left:35px;
+  }
+}
+
+@media (max-width: 670px) {
+  html {
+    font-size: 40%;
+  }
+  body {
+    height: -webkit-fill-available;
+    min-width:none;
+    width:100%;
+  }
+  nav #logo {
+    flex: 1;
+  }
+  nav ul {
+    margin-left: 3rem;
+  }
+  nav li {
+    margin-left: 3rem;
+  }
+  .showcase {
+    grid-template-columns: 10% 1fr 10%;
+  }
+  .showcase img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    margin-top: 10%;
+    margin-right:30%;
+  }
+  #phone {
+    margin-left:65px;
+  }
+  .showcase h2,.info {
+    text-align: center;
+  }
+  .info {
+    margin-top: 5%;
+    margin-left: 10px;
+  }
+}

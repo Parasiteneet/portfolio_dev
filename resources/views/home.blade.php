@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    <p class="lead">ご登録ありがとうございます。</p>
 
                     <a class="btn btn-outline-success text-success btn-lg" href="{{ route('reserve') }}" role="button" >ご予約はこちらから</a><br>
                     <br><a class="btn btn-outline-info text-info btn-lg" href="{{ route('mypage') }}" role="button" >マイページはこちら</a><br>

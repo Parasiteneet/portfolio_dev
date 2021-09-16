@@ -45,7 +45,7 @@
           <label for="form-comment">お問い合わせ</label>
           <input name="form-comment" type="textarea" value="{{ old('form-comment') }}" class="form-control" id="form-comment" placeholder="伝えたいことなどございましたら、ご記入下さい。" >
       </div> -->
-      <button type="submit" class="btn btn-success mt-4"> 入力内容の確認 </button>
+      <button type="submit" class="btn btn-secondary mt-4"> 入力内容の確認 </button>
     </form>
   </div>
 @endsection

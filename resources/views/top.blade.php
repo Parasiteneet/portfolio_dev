@@ -1,15 +1,53 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-<div>
-  <label>会員登録せずにご予約→</label>
-  <a class="btn btn-outline-info text-info btn-lg rounded-circle" href="{{ route('input') }}" role="button" >GO!</a><br>
-  <br><label>会員登録してご予約→</label>
-  <a class="btn btn-outline-success text-success btn-lg rounded-circle" href="{{ route('register') }}" role="button" >GO!</a><br>
-  <br><label>ログインはこちら→</label>
-  <a class="btn btn-outline-warning text-warning btn-lg rounded-circle" href="{{ route('login') }}" role="button" >GO!</a><br>
-</div>
-<div class='mt-4'>
-    <h5 class="pt-2"><em>ご予約の確認や変更はご登録後にご使用できます。</em></h5>
-</div>
-  @endsection
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=Montserrat:wght@200&family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <!-- styles  -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="nav-container">
+      <nav>
+        <h1 id="logo"><a href="{{ route('top') }}">EZBKING</a></h1>
+        <ul>
+          <li class="reg"><a href="{{ route('register') }}">Register</a></li>
+          <li class="login"><a href="{{ route('login') }}">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="home">
+      <div class="showcase">
+         <h2 id="grid-h2"><a href="{{ route('input') }}">Go bookin!</a><h2>
+           <p>↑を押してすぐに予約</p>
+         <img style="-webkit-user-select: none;" id="phone" class="grid-img" src="/images/smart.jpeg" alt="Picture">
+         <div class="info">
+           <h3>Easy booking, Whoever wants.</h3>
+           <p>このサイトは誰でも簡単に面倒な登録</p>
+           <p>などもなく、予約することが可能です。</p>
+         </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body {
+  background:radial-gradient(#525252, #131313);
+}
+
+.top-container {
+  margin-top:40px;
+  margin-bottom: 5%;
+}
+
+.mypage-container {
+
+    height:600px;
+    width:80%;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px #999999;
+    border-bottom: solid 2px #999999;
+    margin:auto;
+}
+.mypage-container:before, .mypage-container:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: #999999;
+}
+.mypage-container:before {left: 10px;}
+.mypage-container:after {right: 10px;}
+.mypage-container p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+#profile-pic {
+  height: 200px;
+  width: 200px;
+  border-radius:50%;
+  box-shadow: 4px 4px 8px gray;
+  display: block;
+  margin-top:5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:2%;
+  object-fit: cover;
+}
+
+.profile-name {
+  color: white;
+  font-size:20px;
+  font-weight: lighter;
+  text-align: center;
+  padding-top: 5px;
+  letter-spacing:1px;
+}
+
+.horizontal-line {
+  margin-bottom: 15px;
+  height: 1px;
+  width:80%;
+  background-color: #999999;
+  border: 1px #999999 solid;
+  color: #999999;
+  text-align: center;
+}
+
+.horizontal-line1 {
+  margin-top:5px;
+  margin-bottom: 15px;
+  height: 1px;
+  width:65%;
+  background-color: #999999;
+  border: 1px #999999 solid;
+  color: #999999;
+  text-align: center;
+}
+
+.horizontal-line2 {
+  margin-top:5px;
+  margin-bottom: 15px;
+  height: 1px;
+  width:50%;
+  background-color: #999999;
+  border: 1px #999999 solid;
+  color: #999999;
+  text-align: center;
+}
+
+.horizontal-line3 {
+  margin-top:5px;
+  margin-bottom: 15px;
+  height: 1px;
+  width:35%;
+  background-color: #999999;
+  border: 1px #999999 solid;
+  color: #999999;
+  text-align: center;
+}
+
+.calender-color {
+  color:#999999;
+  padding-left:5%;
+}
+
+.reservation {
+  font-size:15px;
+  color: whitesmoke;
+  padding-left:10px;
+}
+
+#book-icon {
+  color:#999999;
+  padding-left:5%;
+}
+
+.book-sentence {
+  font-size:15px;
+  color: whitesmoke;
+  padding-left:10px;
+  letter-spacing:1px;
+}
+
+#phone-icon {
+  color:#FFFFE0; 
+  padding-left:5%;
+}
+
+.click {
+  font-size:15px;
+  color: whitesmoke;
+}
+
+/* スマホレスポンシブ */
+@media (max-width: 670px) {
+  .mypage-container {
+    height: 500px;
+    width:80%;
+  }
+  #profile-pic {
+    height: 130px;
+    width: 130px;
+    border-radius:50%;
+    margin-bottom:5%;
+    box-shadow: 4px 4px 8px gray;
+  }
+  .profile-name {
+    font-size:15px;
+    font-weight: lighter;
+  }
+  #calender-icon {
+    color:#999999;
+    padding-left: 10px;
+    font-size:1.5rem;
+  }
+  .reservation {
+    font-size:12px;
+    color: whitesmoke;
+  }
+  #book-icon {
+    color:#999999;
+    padding-left: 10px;
+    font-size:1.5rem;
+  }
+  .book-sentence {
+    font-size:12px;
+    color: whitesmoke;
+  }
+  #phone-icon {
+    color:#FFFFE0; 
+    padding-left: 10px;
+    font-size:2rem;
+  }
+  .click {
+    font-size:9px;
+    color: whitesmoke;
+  }
+
+}
