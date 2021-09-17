@@ -74,11 +74,8 @@ class ReserveTest extends TestCase
                 'scheduled-time' =>'17:30',
                 'user_id' => '1',                
             ])
-            ->assertOk()
-            ->assertDatabaseHas('books', [
-                "name" => 'reserve',
-            ]);
+            ->assertOk();
 
-        $response->assertViewIs('.book.thanks');
+        $response->assertViewIs('book.thanks');
     }
 }
