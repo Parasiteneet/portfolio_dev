@@ -57,10 +57,10 @@ class ManageTest extends TestCase
             ->from('/mypage')
             ->post('/management/update',
                 [
-                    'name' => 'update',
-                    'tel' => '08012345678',
-                    'date' => '2021-09-05',
-                    'time' =>'17:30',
+                    'booking-name' => 'update',
+                    'booking-tel' => '08012345678',
+                    'booking-date' => '2021-09-05',
+                    'scheduled-time' =>'17:30',
                     'user_id' => '1',
                 ]);
         
@@ -71,11 +71,6 @@ class ManageTest extends TestCase
     public function users_have_a_reservation_can_see_the_delete_page() 
     {
         $this->withoutExceptionHandling();
-
-        $this->assertDatabaseHas('books', [
-            'id' => '1',
-            'tel' => '08011112222',
-        ]);
 
         $response = $this->actingAs($this->user)
             ->get('/management/delete')
@@ -90,13 +85,9 @@ class ManageTest extends TestCase
 
         $this->actingAs($this->user);
 
-        $this->assertDatabaseHas('books', [
-            'id' => '1',
-        ]);         
-
         $response = $this
             ->from('/mypage')
-            ->delete('/management/delete');
+            ->post('/management/erase');
         
         $response->assertRedirect('/mypage');
 
