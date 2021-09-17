@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Book;
 use App\Mail\BookSendmail;
 use Illuminate\Http\Request;
@@ -9,9 +10,13 @@ use App\Http\Requests\BookRequest;
 
 class WithoutController extends Controller
 {
-    public function index() 
+    public function index()
     {
-        return view('/without.input');
+        if (Auth::check()) {
+            return redirect()->route('mypage');
+          } else {
+            return view('/without.input');
+          }
     }
 
     public function check(BookRequest $request) 

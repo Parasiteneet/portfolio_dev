@@ -32,11 +32,4 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 
-/*
----DBにINSERTできているかのテスト
-*/
-// Route::get('/book/test','TestController@show');
-// Route::post('/book/test','TestController@test');
-
-
 
