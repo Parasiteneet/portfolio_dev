@@ -14,14 +14,20 @@ use Illuminate\Support\Facades\DB;
 
 class ManageController extends Controller
 {
+     private static function getReservation() 
+     {
+         $user = auth()->user()->id;
+         $rsv = Book::where('user_id','=',$user)
+         ->orderBy('updated_at','desc')
+         ->first();
+
+         return $rsv;
+     } 
       
      public function index()
      {
-         $user_id = auth()->user()->id;
+         $rsv = self::getReservation();
          $name = auth()->user()->name;
-         $rsv = Book::where('user_id','=',$user_id)
-         ->orderBy('updated_at','desc')
-         ->first();
          $mail = auth()->user()->email;
          $today = Carbon::today('Asia/Tokyo');
 
@@ -30,24 +36,20 @@ class ManageController extends Controller
 
      public function edit() 
      {
-           $user = auth()->user()->id;
-           $rsv = Book::where('user_id','=',$user)
-           ->orderBy('created_at','desc')
-           ->first();
-           
-           if (isset($user,$rsv)) {
-              return view('/management/edit',compact('user','rsv'));
-             } else {
-                return redirect()->route('top');
-             }
+         $user = auth()->user()->id;
+         $rsv = self::getReservation();
+         
+         if (isset($user,$rsv)) {
+            return view('/management/edit',compact('user','rsv'));
+            } else {
+               return redirect()->route('mypage');
+         }
      }
 
      public function update(BookRequest $request)
      {
         $user = auth()->user()->id;
-        $rsv = Book::where('user_id','=',$user)
-        ->orderBy('created_at','desc')
-        ->first();
+        $rsv = self::getReservation();
 
         if ($user === $rsv->user_id) {
            $inputs = $request->all();
@@ -70,9 +72,8 @@ class ManageController extends Controller
      public function delete(Request $request) 
      {
         $user = auth()->user()->id;
-        $rsv = Book::where('user_id','=',$user)
-        ->orderBy('created_at','desc')
-        ->first();
+        $rsv = self::getReservation();
+
         if (isset($user,$rsv)) {
            return view('/management/delete',compact('user','rsv'));
         } else {
@@ -83,9 +84,7 @@ class ManageController extends Controller
       public function erase(Request $request) 
       {
          $user = auth()->user()->id;
-         $rsv = Book::where('user_id','=',$user)
-         ->orderBy('created_at','desc')
-         ->first();
+         $rsv = self::getReservation();
 
          if ($user === optional($rsv)->user_id) {
             $rsv->delete();
