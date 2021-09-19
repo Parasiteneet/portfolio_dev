@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index() {
-        $users = User::with('name')->get();
-        // return view('.admin.index', compact('users'));
-        dump($users);
+        $users = User::all();
+        return view('.admin.index', compact('users'));
     }
 }

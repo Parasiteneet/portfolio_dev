@@ -2,6 +2,9 @@
 
 @section('content')
 <div>
-  <p>Only Admin can see this page<p>
+  @foreach ($users as $user)
+  <p>{{ $user->name }}<p>
+  <p>{{ $user->email }}<p>
+  @endforeach
 </div>
 @endsection
