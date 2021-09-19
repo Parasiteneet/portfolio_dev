@@ -31,5 +31,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/management/erase','ManageController@erase')->name('erase');
 });
 
+//管理人専用ページ
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/admin/show', 'AdminController@index')->name('admin');
+});
+
 
 
