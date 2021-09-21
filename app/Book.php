@@ -13,8 +13,8 @@ class Book extends Model
      * この予約を所有するUserを取得
      */
 
-     public function user()
+     public function users()
      {
-         return $this->belongsTo('App\User');
+         return $this->belongsTo('App\User','user_id');
      }
 }
