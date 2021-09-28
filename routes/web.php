@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin/user_list', 'AdminController@userList')->name('user_list');
     Route::get('/admin/rsv_list', 'AdminController@rsvList')->name('rsv_list');
     Route::get('/admin/user/{id}','AdminController@userDetail')->name('user_detail');
+    Route::post('/admin/user/delete','AdminController@userDelete')->name('user_delete');
 });
 
 
