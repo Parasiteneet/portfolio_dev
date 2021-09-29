@@ -32,15 +32,16 @@ class AdminController extends Controller
     }
 
     public function userDelete(Request $request) {
-        $user = User::find($request->input('delete'));
-        $user_id = auth()->user()->id;
-        $rsv = Book::where('user_id','=',$user_id)
-        ->firstOrFail();
-        ->delete();
-
-
-        // $user->delete();
-
-        return redirect()->route('user_list');
+        
+        try {
+            $user = User::find($request->input('delete'));
+            $user_id = auth()->user()->id;
+            $rsv = Book::where('user_id','=',$user_id)->delete();
+            $user->delete();
+    
+            return view('.admin.cancel');
+        } catch (\Exception $e) {
+            return redirect()->route('admin');
+        }
     }
 }
