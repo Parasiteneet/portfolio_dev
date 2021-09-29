@@ -20,7 +20,8 @@ class AdminController extends Controller
     }
 
     public function rsvList() {
-        $infos = Book::with('users')->get('date','name');
+        $infos = User::with('books')
+        ->paginate(5);
 
         return view('.admin.rsv_list', compact('infos'));
     }
