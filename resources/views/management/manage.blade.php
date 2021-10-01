@@ -39,18 +39,24 @@
         <div class="horizontal-line1"></div>
         <div class="make-booking">
             <span><i id="book-icon" class="fas fa-book fa-2x"></i></span>
+            <span class="book-sentence">新規予約する</span>
+            <span><a href="{{ route('reserve') }}"><i id="phone-icon" class="fas fa-phone-volume fa-3x"></i></a></span>
+            <span class="click"> ←こちらをクリック!</span>
+        </div>
+        <div class="horizontal-line2"></div>
+        <div class="make-booking">
+            <span><i id="book-icon" class="fas fa-book fa-2x"></i></span>
             <span class="book-sentence">ご予約を変更</span>
             <span><a href="{{ route('edit') }}"><i id="phone-icon" class="far fa-edit fa-3x"></i></a></span>
             <span class="click"> ←こちらをクリック!</span>
         </div>
-        <div class="horizontal-line2"></div>
+        <div class="horizontal-line3"></div>
         <div class="management">
             <span><i id="book-icon" class="fas fa-book-open fa-2x"></i></span>
             <span class="book-sentence">ご予約を削除</span>
             <span><a href="{{ route('delete') }}"><i id="phone-icon" class="fas fa-trash fa-3x"></i></a></span>
             <span class="click"> ←こちらをクリック!</span>
         </div>
-        <div class="horizontal-line3"></div>
     </div>
   </div>
 
