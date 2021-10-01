@@ -1,12 +1,3 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 ## About EZBKING
 
 個人でも予約を受けられるWebアプリケーションです。予約の登録・変更・削除・を行えます。誰でも簡単に使用することが可能で、面倒な登録をしなくても利用できます。
@@ -20,7 +11,7 @@
   - VPC
   - EC2
   - Route53
-- PHPUnit
+- PHPUnit 7.5.20
 - Vue.js
 
 ## 機能一覧
@@ -33,7 +24,12 @@
   - 予約の削除
   - 予約日時の確認
 - メール機能(Mailable)
-  - 予約時に管理人のメールアドレスにメッセージが届く。
+  - 予約完了時に管理人のメールアドレスにメッセージが届く。
+- 管理機能
+  -管理者専用ログイン(Middleware)
+  -ユーザ一覧
+  -ユーザの予約一覧
+  -ユーザの削除
 
 ## Contributing
 

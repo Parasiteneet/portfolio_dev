@@ -31,5 +31,18 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/management/erase','ManageController@erase')->name('erase');
 });
 
+//管理人専用ページ
+Route::group(['middleware' => ['auth.admin']], function() {
+    Route::get('/admin/index', 'AdminController@index')->name('admin');
+    Route::post('/admin/logout', 'AdminController@logout')->name('admin_logout');
+    Route::get('/admin/user_list', 'AdminController@userList')->name('user_list');
+    Route::get('/admin/rsv_list', 'AdminController@rsvList')->name('rsv_list');
+    Route::get('/admin/user/{id}','AdminController@userDetail')->name('user_detail');
+    Route::post('/admin/user/delete','AdminController@userDelete')->name('user_delete');
+});
+
+//管理者ログイン
+Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin_login_form');
+Route::post('/admin/login', 'AdminController@login')->name('admin_login');
 
 
