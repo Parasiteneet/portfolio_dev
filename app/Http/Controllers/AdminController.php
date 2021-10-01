@@ -17,7 +17,7 @@ class AdminController extends Controller
         $user_email = $request->input('email');
         $pin = $request->input('pin');
 
-        if ($user_email == "admin@gmail.com" && $pin == '00000000') {
+        if ($user_email == "#" && $pin == '#') {
             $request->session()->put('admin_auth', true);
 
             return redirect()->route('admin');
