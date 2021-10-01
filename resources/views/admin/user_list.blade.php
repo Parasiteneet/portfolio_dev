@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 		<div class="card">
-				<div class="card-header">User List</div>
+				<div class="card-header">User List | <a href="{{ route('admin') }}">前の画面に戻る</a></div>
 						<div class="card-body">
 								<ul class="list-group">
 										@foreach ($user_list as $user)
@@ -13,10 +13,10 @@
 														</a>
 												</li>
 									@endforeach
-								</ul>			
+								</ul>
 						<div class="mt-3">
 							 {{ $user_list->links() }}
-						</div>			
+						</div>
 				</div>
 		</div>
 </div>

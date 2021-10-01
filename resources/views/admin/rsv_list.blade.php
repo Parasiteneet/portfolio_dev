@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-header">予約情報</div>
+        <div class="card-header">予約情報 | <a href="{{ route('admin') }}">前の画面に戻る</a></div>
             <div class="card-body">
                 <ul class="list-group">
                     @foreach ($infos as $info)
