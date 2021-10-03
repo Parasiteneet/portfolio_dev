@@ -16,7 +16,7 @@
 
 
                     <a class="btn btn-outline-success text-success btn-lg" href="{{ route('reserve') }}" role="button" >ご予約はこちらから</a><br>
-                    <br><a class="btn btn-outline-info text-info btn-lg" href="{{ route('mypage') }}" role="button" >マイページはこちら</a><br>
+                    <br><a class="btn btn-outline-info text-info btn-lg" href="{{ route('manage') }}" role="button" >ご予約の管理はこちら</a><br>
                 </div>
             </div>
         </div>

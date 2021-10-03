@@ -32,7 +32,7 @@
             <span><i id="calender-icon" class="fas fa-calendar-alt fa-2x calender-color"></i></span>
             @isset($rsv->date)
             @if($rsv->date > $today)
-            <span class="reservation">ご予約中の日にち：{{ $rsv->date??"ご予約はございません" }}</span>
+            <span class="reservation">ご予約日：{{ $rsv->date??"ご予約はございません" }}｜ご予約時間：{{ $rsv->time }}</span>
             @endif
             @endisset           
         </div>

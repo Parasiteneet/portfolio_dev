@@ -27,7 +27,7 @@ class WithoutTest extends TestCase
         $response = $this
             ->actingAs(factory(User::class)->create())
             ->get('/without/input')
-            ->assertRedirect('/mypage');
+            ->assertRedirect('/management/manage');
     }
 
 

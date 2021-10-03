@@ -42,7 +42,7 @@ class ManageController extends Controller
          if (isset($user,$rsv)) {
             return view('/management/edit',compact('user','rsv'));
             } else {
-               return redirect()->route('mypage');
+               return redirect()->route('manage');
          }
      }
 
@@ -64,9 +64,10 @@ class ManageController extends Controller
            $to = "wumabeatboxer@gmail.com";
            \Mail::to($to)->send(new BookSendmail($inputs));
         } else {
-         return redirect()->route('manage');
+           return redirect()->route('manage');
         }
-        return redirect()->route('mypage');
+        $name = auth()->user()->name;
+        return view('book.thanks',compact('name'));
      }
 
      public function delete(Request $request) 
@@ -91,6 +92,7 @@ class ManageController extends Controller
          } else {
             return redirect()->route('manage');
          }
-         return redirect()->route('mypage');
+         $name = auth()->user()->name;
+         return view('book.thanks',compact('name'));
       }
 }
