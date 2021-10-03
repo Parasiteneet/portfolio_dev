@@ -54,7 +54,7 @@ class ManageTest extends TestCase
         $this->actingAs($this->user);
         
         $response = $this
-            ->from('/mypage')
+            ->from('/manage')
             ->post('/management/update',
                 [
                     'booking-name' => 'update',
@@ -64,7 +64,7 @@ class ManageTest extends TestCase
                     'user_id' => '1',
                 ]);
         
-            $response->assertRedirect('/mypage');
+                $response->assertViewIs('book.thanks');
     }
 
         /** @test */
@@ -86,10 +86,9 @@ class ManageTest extends TestCase
         $this->actingAs($this->user);
 
         $response = $this
-            ->from('/mypage')
             ->post('/management/erase');
         
-        $response->assertRedirect('/mypage');
+        $response->assertViewIs('book.thanks');
 
         $this->assertDatabaseMissing('books', [
             'id' => '1',            

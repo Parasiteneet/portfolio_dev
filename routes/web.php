@@ -2,11 +2,12 @@
 
 Auth::routes();
 
-Route::get('/','MypageController@top')->name('top');
+Route::get('/', function () {
+    return view('top');
+})->name('top');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/mypage', 'MypageController@index')->middleware('auth')->name('mypage');
 
 //会員登録なしで予約
 Route::prefix('without')->group(function () {

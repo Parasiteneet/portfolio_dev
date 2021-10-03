@@ -13,7 +13,7 @@ class WithoutController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            return redirect()->route('mypage');
+            return redirect()->route('manage');
           } else {
             return view('/without.input');
           }
