@@ -8,7 +8,6 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 //会員登録なしで予約
 Route::prefix('without')->group(function () {
     Route::get('input','WithoutController@index')->name('input');

@@ -78,7 +78,7 @@ class ManageController extends Controller
         if (isset($user,$rsv)) {
            return view('/management/delete',compact('user','rsv'));
         } else {
-         return redirect()->route('top');
+         return redirect()->route('manage');
         }
       } 
 
