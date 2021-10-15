@@ -15,7 +15,6 @@
   - EC2
   - Route53
 - PHPUnit 7.5.20
-- Vue.js
 
 ## 機能一覧
 
