@@ -3,7 +3,7 @@
 個人でも簡単に予約を受けられるWebアプリケーションです。ユーザは予約の登録・変更・削除・を行えます。どんなユーザでも簡単に使用することが可能で、面倒な登録をしなくても利用できます。
 
 ## EZBOOKING(イージーブッキング)
-<img width="1437" alt="スクリーンショット 2021-10-13 20 53 13" src="https://user-images.githubusercontent.com/75173875/137128403-6bbd5c83-d7e6-4c95-b89f-2abd7af0e1a9.png">
+<img width="1431" alt="スクリーンショット 2021-10-15 18 08 57" src="https://user-images.githubusercontent.com/75173875/137462930-10c8f82b-66d4-4747-a7b1-fc6602777fd7.png">
 
 ## 使用技術
 - PHP 7.4.15
